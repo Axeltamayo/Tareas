@@ -33,6 +33,7 @@ Se presentan los datos ingresados y el IMC calculado con dos decimales.
 
  5. Clasificación del IMC
 Dependiendo del valor del IMC, se clasifica en diferentes categorías:
+
 < 18.5: Bajo peso
 18.5 - 24.9: Peso normal
 25 - 29.9: Sobrepeso
