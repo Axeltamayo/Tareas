@@ -35,9 +35,15 @@ Se presentan los datos ingresados y el IMC calculado con dos decimales.
 Dependiendo del valor del IMC, se clasifica en diferentes categorías:
 
 < 18.5: Bajo peso
+
 18.5 - 24.9: Peso normal
+
 25 - 29.9: Sobrepeso
+
 30 - 34.9: Obesidad grado 1
+
 35 - 39.9: Obesidad grado 2
+
 ≥ 40: Obesidad grado 3 (obesidad mórbida)
+
 Esto se hace usando condicionales if-elif-else.
