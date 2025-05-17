@@ -26,14 +26,19 @@ edad = solicitar_numero("edad")
 peso = solicitar_numero("peso en kilogramos")
 estatura = solicitar_numero("estatura en metros")
 
-# Calcular IMC
-imc = peso / (estatura ** 2)
+print("\n--- Interpretación del IMC ---")
 
-# Mostrar resultados
-print("\n--- Datos del Usuario ---")
-print(f"Nombre completo: {nombre} {apellido_paterno} {apellido_materno}")
-print(f"Edad: {edad} años")
-print(f"Peso: {peso} kg")
-print(f"Estatura: {estatura} m")
-print(f"Índice de Masa Corporal (IMC): {imc:.2f}")
+if imc < 18.5:
+    print("Clasificación: Bajo peso")
+elif 18.5 <= imc < 24.9:
+    print("Clasificación: Peso normal")
+elif 25 <= imc < 29.9:
+    print("Clasificación: Sobrepeso")
+elif 30 <= imc < 34.9:
+    print("Clasificación: Obesidad grado 1")
+elif 35 <= imc < 39.9:
+    print("Clasificación: Obesidad grado 2")
+else:
+    print("Clasificación: Obesidad grado 3 (obesidad mórbida)")
+
 
