@@ -41,6 +41,7 @@ imc= peso/estatura**2
 Se presentan los datos ingresados y el IMC calculado con dos decimales.
 
  5. Clasificación del IMC
+
 Dependiendo del valor del IMC, se clasifica en diferentes categorías:
 
 < 18.5: Bajo peso
