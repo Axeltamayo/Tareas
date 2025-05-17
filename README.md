@@ -1,9 +1,11 @@
 # Tareas
 Calculadora imc
+
 Este es el resumen de la realizacion de mi programa:
 
 1. Funciones auxiliares para la entrada de datos
-Se crean dos funciones para solicitar datos al usuario de forma segura:   
+Se crean dos funciones para solicitar datos al usuario de forma segura:
+   
 *solicitar_texto(campo)
 Recibe el nombre del campo (ej. "nombre", "apellido").
 Usa un bucle while para asegurarse de que el usuario no deje el campo vacío.
