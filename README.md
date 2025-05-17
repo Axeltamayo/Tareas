@@ -59,3 +59,5 @@ Dependiendo del valor del IMC, se clasifica en diferentes categorías:
 ≥ 40: Obesidad grado 3 (obesidad mórbida)
 
 Esto se hace usando condicionales if-elif-else.
+
+Las reflexiones que me a dado el curso son muy interesantes ya que esta mejorando mis conocimientos hacia la programacion ya que tengo noción de las estructuras de la misma ya que llevo desde la prepa ocupando programacion ya sea java, greenfood y c++ ya que las 4 son casi similares con sus estructuras de los codigos, pero el curso me esta ayudando a mejorar mis conocimientos 
