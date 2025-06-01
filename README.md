@@ -1,11 +1,16 @@
 # Tareas
 Proyecto 2 
-🔹 Parte 1: Verificar longitud de palabra
+
+Parte 1: Verificar longitud de palabra
+
 Función: verificar_longitud_palabra()
-✔️ Objetivo:
+
+✔ Objetivo:
+
 Verifica cuántas letras tiene una palabra ingresada por el usuario y da un mensaje según su longitud.
 
-📌 Paso a paso:
+Paso a paso:
+
 Se le pide al usuario que ingrese una palabra.
 
 Se calcula la longitud de esa palabra usando len(palabra).
@@ -18,19 +23,22 @@ Si tiene menos de 4 letras, se indica que faltan letras.
 
 Si tiene más de 8 letras, se indica que sobran letras.
 
-🧪 Ejemplo:
+Ejemplo:
+
 Si el usuario escribe "gato", el programa responde:
 
-nginx
-Copiar
-Editar
 La palabra es correcta.
-🔹 Parte 2: Identificar el cuadrante de un punto
+
+Parte 2: Identificar el cuadrante de un punto
+
 Función: identificar_cuadrante()
-✔️ Objetivo:
+
+✔ Objetivo:
+
 Determina en qué cuadrante del plano cartesiano se encuentra un punto (X, Y) ingresado por el usuario.
 
-📌 Paso a paso:
+Paso a paso:
+
 Se piden dos coordenadas: x y y. Se convierten a tipo float para permitir números decimales.
 
 Usa try-except para capturar errores si el usuario no ingresa un número válido.
@@ -49,27 +57,28 @@ x < 0 y y < 0: Cuadrante III
 
 x > 0 y y < 0: Cuadrante IV
 
-🧪 Ejemplo:
+Ejemplo:
+
 Si el usuario escribe x = 2 y y = -5, el programa dirá:
 
-nginx
-Copiar
-Editar
 El punto se encuentra en el cuadrante IV.
-🔹 Ejecución del programa
+
+Ejecución del programa
+
 Al final, el programa llama a ambas funciones:
 
-python
-Copiar
-Editar
 verificar_longitud_palabra()
+
 identificar_cuadrante()
+
 Esto hace que:
 
 Primero se ejecute la verificación de la palabra.
 
 Luego se ejecute la verificación del cuadrante del punto.
 
+Mis reflexiones que llevo hasta ahorta son las siguientes:
+Gacias a los que llevo de clases me han ayudado bastante a mejorar mis conocimientos hacia la programacion, las clases son muy informativas y me estan ayudandon bastante, mediente pasan las clases ire mejorando. 
 
 Calculadora imc
 
