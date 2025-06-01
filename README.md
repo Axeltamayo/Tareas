@@ -1,4 +1,76 @@
 # Tareas
+Proyecto 2 
+🔹 Parte 1: Verificar longitud de palabra
+Función: verificar_longitud_palabra()
+✔️ Objetivo:
+Verifica cuántas letras tiene una palabra ingresada por el usuario y da un mensaje según su longitud.
+
+📌 Paso a paso:
+Se le pide al usuario que ingrese una palabra.
+
+Se calcula la longitud de esa palabra usando len(palabra).
+
+Luego se usa una estructura if-elif-else para evaluar:
+
+Si la longitud está entre 4 y 8 letras (inclusive), se dice que la palabra es correcta.
+
+Si tiene menos de 4 letras, se indica que faltan letras.
+
+Si tiene más de 8 letras, se indica que sobran letras.
+
+🧪 Ejemplo:
+Si el usuario escribe "gato", el programa responde:
+
+nginx
+Copiar
+Editar
+La palabra es correcta.
+🔹 Parte 2: Identificar el cuadrante de un punto
+Función: identificar_cuadrante()
+✔️ Objetivo:
+Determina en qué cuadrante del plano cartesiano se encuentra un punto (X, Y) ingresado por el usuario.
+
+📌 Paso a paso:
+Se piden dos coordenadas: x y y. Se convierten a tipo float para permitir números decimales.
+
+Usa try-except para capturar errores si el usuario no ingresa un número válido.
+
+Luego evalúa en qué cuadrante está el punto:
+
+Si x == 0 o y == 0, no se puede determinar el cuadrante, porque el punto está sobre un eje.
+
+Según los signos de x e y, determina el cuadrante:
+
+x > 0 y y > 0: Cuadrante I
+
+x < 0 y y > 0: Cuadrante II
+
+x < 0 y y < 0: Cuadrante III
+
+x > 0 y y < 0: Cuadrante IV
+
+🧪 Ejemplo:
+Si el usuario escribe x = 2 y y = -5, el programa dirá:
+
+nginx
+Copiar
+Editar
+El punto se encuentra en el cuadrante IV.
+🔹 Ejecución del programa
+Al final, el programa llama a ambas funciones:
+
+python
+Copiar
+Editar
+verificar_longitud_palabra()
+identificar_cuadrante()
+Esto hace que:
+
+Primero se ejecute la verificación de la palabra.
+
+Luego se ejecute la verificación del cuadrante del punto.
+
+
 Calculadora imc
 
 Este es el resumen de la realizacion de mi programa:
@@ -60,4 +132,4 @@ Dependiendo del valor del IMC, se clasifica en diferentes categorías:
 
 Esto se hace usando condicionales if-elif-else.
 
-Las reflexiones que me a dado el curso son muy interesantes ya que esta mejorando mis conocimientos hacia la programacion ya que tengo noción de las estructuras de la misma ya que llevo desde la prepa ocupando programacion ya sea java, greenfood y c++ ya que las 4 son casi similares con sus estructuras de los codigos, pero el curso me esta ayudando a mejorar mis conocimientos 
+Las reflexiones que me a dado el curso son muy interesantes ya que esta mejorando mis conocimientos hacia la programacion ya que tengo noción de las estructuras de la misma ya que llevo desde la prepa ocupando programacion ya sea java, greenfood y c++ ya que las 4 son casi similares con sus estructuras de los codigos, pero el curso me esta ayudando a mejorar mis conocimientos
