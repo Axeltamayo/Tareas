@@ -1,4 +1,88 @@
 # Tareas
+Proyecto 3
+
+1. Importación de bibliotecas
+
+import random
+
+import matplotlib.pyplot as plt
+
+*random se usa para simular las decisiones aleatorias (izquierda o derecha).
+
+*matplotlib.pyplot se usa para graficar el histograma final de resultados.
+
+2. Función simular_galton
+
+def simular_galton(n_canicas, niveles):
+
+Esta función simula el recorrido de muchas canicas por la máquina.
+
+Dentro de la función:
+
+contenedores = [0] * (niveles + 1)
+
+Se crea una lista con niveles + 1 elementos, ya que si una canica tiene 12 decisiones (niveles), puede terminar en 13 posibles posiciones (de 0 a 12).
+
+for _ in range(n_canicas):
+
+    derecha = 0
+    
+Se itera una vez por cada canica. derecha contará cuántas veces la canica se fue a la derecha.
+
+for _ in range(niveles):
+
+    if random.random() > 0.5:
+    
+        derecha += 1
+        
+Se hace una decisión aleatoria por cada nivel.
+
+Si el número aleatorio es mayor a 0.5, se considera que la canica fue a la derecha.
+
+contenedores[derecha] += 1
+
+Se incrementa el contador del contenedor que corresponde a esa cantidad de movimientos a la derecha.
+
+3. Función graficar_histograma
+   
+def graficar_histograma(resultados):
+
+Esta función crea un histograma a partir de la lista resultados.
+
+plt.bar(range(len(resultados)), resultados, color='skyblue', edgecolor='black')
+
+Dibuja las barras del histograma. Cada barra representa un contenedor.
+
+plt.xlabel('Contenedores (posición final)')
+
+plt.ylabel('Número de canicas')
+
+plt.title('Simulación de una máquina de Galton con 3000 canicas y 12 niveles')
+
+plt.grid(axis='y', linestyle='--', alpha=0.7)
+
+plt.show()
+
+Se configuran las etiquetas, el título y se muestra la gráfica.
+
+4. Ejecución del programa
+   
+n_canicas = 3000
+
+niveles = 12
+
+Define que se simularán 3000 canicas y 12 niveles.
+
+resultados = simular_galton(n_canicas, niveles)
+
+graficar_histograma(resultados)
+
+Llama a las funciones para simular y luego graficar los resultados.
+
+5. Resultado esperado
+
+La gráfica mostrará una distribución similar a una campana de Gauss, con la mayoría de las canicas cayendo en los contenedores del medio (alrededor de 6), y menos en los extremos (0 o 12).
+
 Proyecto 2 
 
 Parte 1: Verificar longitud de palabra
@@ -80,7 +164,7 @@ Luego se ejecute la verificación del cuadrante del punto.
 Mis reflexiones que llevo hasta ahorta son las siguientes:
 Gacias a los que llevo de clases me han ayudado bastante a mejorar mis conocimientos hacia la programacion, las clases son muy informativas y me estan ayudandon bastante, mediente pasan las clases ire mejorando. 
 
-Calculadora imc
+Proyecto 1 Calculadora imc
 
 Este es el resumen de la realizacion de mi programa:
 
