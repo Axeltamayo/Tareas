@@ -1,6 +1,6 @@
 # Tareas
 
-🔍 Importaciones
+Importaciones
 
 import requests      # Permite hacer solicitudes HTTP para obtener datos de la API.
 
