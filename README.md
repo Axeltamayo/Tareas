@@ -1,129 +1,30 @@
 # Tareas
 
-Importaciones
+proyecto 4 
 
-import requests      # Permite hacer solicitudes HTTP para obtener datos de la API.
+1. Importar librerías
 
-import json          # Permite guardar la información como archivo JSON.
+El programa comienza cargando las herramientas necesarias para funcionar: una para hacer consultas a internet (pedir información a la API), otra para manejar datos en formato JSON (para guardar y leer información organizada), y una última para interactuar con el sistema de archivos (crear carpetas y guardar archivos).
 
-import os            # Permite trabajar con archivos y directorios del sistema.
+2. Obtener datos del Pokémon
 
-from PIL import Image      # Librería para trabajar con imágenes.
+Hay una parte del programa que recibe el nombre de un Pokémon y pregunta a la API oficial de Pokémon si existe y cuál es su información. Si la API responde correctamente, el programa toma datos como el nombre, peso, altura, tipos, habilidades, movimientos y la imagen frontal del Pokémon. Si el Pokémon no existe, avisa que no se encontró, y si ocurre otro error, informa que hubo un problema con la consulta.
 
-from io import BytesIO     # Convierte datos binarios en un flujo que PIL puede leer.
+3. Mostrar información en pantalla
 
- 1. Función: get_pokemon_data(name)
+Una vez que el programa tiene los datos del Pokémon, los muestra en la pantalla para que el usuario pueda verlos fácilmente: nombre, peso, altura, tipos, habilidades, algunos movimientos y la dirección de la imagen frontal.
 
-def get_pokemon_data(name):
-    url = f"https://pokeapi.co/api/v2/pokemon/{name.lower()}"
-    response = requests.get(url)
-    
-Se construye la URL usando el nombre del Pokémon en minúsculas.
+4. Guardar los datos en un archivo
 
-Se hace una solicitud GET a la API.
-    if response.status_code == 200:
-        return response.json()
-    else:
-        return None
-        
-Si la respuesta fue exitosa (200 OK), devuelve los datos en formato JSON.
+Para que la información se pueda guardar y consultar luego, el programa crea una carpeta llamada "pokedex" (si no existe ya) y dentro guarda un archivo en formato JSON con todos los datos obtenidos del Pokémon. Esto permite tener un registro local que no dependa de volver a consultar la API.
 
-Si no, devuelve None (lo usaremos para mostrar un mensaje de error).
+5. Función principal y control de flujo
 
- 2. Función: show_pokemon_info(data)
+El programa pide al usuario que escriba el nombre del Pokémon que quiere consultar. Si el Pokémon existe, muestra sus datos y los guarda en un archivo. Si no, muestra un mensaje de error. Todo esto sucede en la función principal que se ejecuta cuando se inicia el programa.
 
-def show_pokemon_info(data):
-    name = data["name"].capitalize()
-    weight = data["weight"]
-    height = data["height"]
-    image_url = data["sprites"]["front_default"]
-    
-Extrae el nombre, peso, altura e imagen frontal del Pokémon desde los datos JSON.
-    types = [t["type"]["name"] for t in data["types"]]
-    abilities = [a["ability"]["name"] for a in data["abilities"]]
-    moves = [m["move"]["name"] for m in data["moves"]]
-Usa listas por comprensión para extraer:
+6. Ejecución controlada
 
-Tipos
-
-Habilidades
-
-Movimientos
-    print(f"\n Nombre: {name}")
-    print(f" Altura: {height}")
-    print(f" Peso: {weight}")
-    print(f" Tipos: {', '.join(types)}")
-    print(f" Habilidades: {', '.join(abilities)}")
-    print(f" Primeros 5 movimientos: {', '.join(moves[:5])}")
-    print(f" Imagen: {image_url}")
-Muestra la información en consola de forma legible.
-    show_image(image_url)
-    
-Llama a la función que abre la imagen del Pokémon.
-    return {
-        "name": name,
-        "height": height,
-        "weight": weight,
-        "types": types,
-        "abilities": abilities,
-        "moves": moves,
-        "image_url": image_url
-    }
-Devuelve un diccionario con toda la información para guardarla luego en JSON.
-
- 3. Función: show_image(url)
-def show_image(url):
-    try:
-        response = requests.get(url)
-        image = Image.open(BytesIO(response.content))
-        image.show()
-Descarga la imagen de la URL.
-
-Usa BytesIO para leer los datos binarios de imagen.
-
-Usa Pillow (Image) para abrirla y mostrarla en una ventana.
-    except Exception as e:
-    print(f" Error al cargar la imagen: {e}")
-        
-Captura cualquier error y lo muestra en pantalla si algo sale mal.
-
- 4. Función: save_to_json(pokemon_info)
-
-def save_to_json(pokemon_info):
-    if not os.path.exists("pokedex"):
-        os.makedirs("pokedex")
-        
-Crea una carpeta llamada pokedex/ si no existe.
-    filename = f"pokedex/{pokemon_info['name'].lower()}.json"
-    with open(filename, "w") as f:
-        json.dump(pokemon_info, f, indent=4)
-        
-Guarda la información del Pokémon como archivo .json con su nombre en minúsculas.
-    print(f"\n Información guardada en {filename}")
-    
-Confirma en consola que se ha guardado correctamente.
-
- 5. Función principal: main()
-
-def main():
-    name = input(" Introduce el nombre de un Pokémon: ")
-    data = get_pokemon_data(name)
-    
-Pide al usuario el nombre del Pokémon e intenta obtener sus datos.
-    if data:
-        pokemon_info = show_pokemon_info(data)
-        save_to_json(pokemon_info)
-    else:
-        print(" Pokémon no encontrado. Verifica el nombre.")
-        
-Si los datos existen, los muestra y guarda.
-
-Si no, avisa que no se encontró el Pokémon.
-
- 6. Bloque de ejecución principal
-
-if __name__ == "__main__":
-    main()
+Finalmente, el programa está diseñado para ejecutar esta función principal solo cuando se ejecuta directamente, no cuando se importa desde otro programa. Esto es para evitar ejecuciones no deseadas.
 
 Proyecto 3
 
