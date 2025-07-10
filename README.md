@@ -15,9 +15,7 @@ from io import BytesIO     # Convierte datos binarios en un flujo que PIL puede 
  1. Función: get_pokemon_data(name)
 
 def get_pokemon_data(name):
-
     url = f"https://pokeapi.co/api/v2/pokemon/{name.lower()}"
-    
     response = requests.get(url)
     
 Se construye la URL usando el nombre del Pokémon en minúsculas.
@@ -32,7 +30,7 @@ Si la respuesta fue exitosa (200 OK), devuelve los datos en formato JSON.
 
 Si no, devuelve None (lo usaremos para mostrar un mensaje de error).
 
-🖼️ 2. Función: show_pokemon_info(data)
+ 2. Función: show_pokemon_info(data)
 
 def show_pokemon_info(data):
     name = data["name"].capitalize()
@@ -51,13 +49,13 @@ Tipos
 Habilidades
 
 Movimientos
-    print(f"\n📛 Nombre: {name}")
-    print(f"📏 Altura: {height}")
-    print(f"⚖️ Peso: {weight}")
-    print(f"🌈 Tipos: {', '.join(types)}")
-    print(f"💡 Habilidades: {', '.join(abilities)}")
-    print(f"🌀 Primeros 5 movimientos: {', '.join(moves[:5])}")
-    print(f"🖼️ Imagen: {image_url}")
+    print(f"\n Nombre: {name}")
+    print(f" Altura: {height}")
+    print(f" Peso: {weight}")
+    print(f" Tipos: {', '.join(types)}")
+    print(f" Habilidades: {', '.join(abilities)}")
+    print(f" Primeros 5 movimientos: {', '.join(moves[:5])}")
+    print(f" Imagen: {image_url}")
 Muestra la información en consola de forma legible.
     show_image(image_url)
     
@@ -85,7 +83,7 @@ Usa BytesIO para leer los datos binarios de imagen.
 
 Usa Pillow (Image) para abrirla y mostrarla en una ventana.
     except Exception as e:
-    print(f"⚠️ Error al cargar la imagen: {e}")
+    print(f" Error al cargar la imagen: {e}")
         
 Captura cualquier error y lo muestra en pantalla si algo sale mal.
 
@@ -101,14 +99,14 @@ Crea una carpeta llamada pokedex/ si no existe.
         json.dump(pokemon_info, f, indent=4)
         
 Guarda la información del Pokémon como archivo .json con su nombre en minúsculas.
-    print(f"\n✅ Información guardada en {filename}")
+    print(f"\n Información guardada en {filename}")
     
 Confirma en consola que se ha guardado correctamente.
 
  5. Función principal: main()
 
 def main():
-    name = input("🔍 Introduce el nombre de un Pokémon: ")
+    name = input(" Introduce el nombre de un Pokémon: ")
     data = get_pokemon_data(name)
     
 Pide al usuario el nombre del Pokémon e intenta obtener sus datos.
@@ -116,7 +114,7 @@ Pide al usuario el nombre del Pokémon e intenta obtener sus datos.
         pokemon_info = show_pokemon_info(data)
         save_to_json(pokemon_info)
     else:
-        print("❌ Pokémon no encontrado. Verifica el nombre.")
+        print(" Pokémon no encontrado. Verifica el nombre.")
         
 Si los datos existen, los muestra y guarda.
 
